@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import './WeatherApp.css'
 
-import search_icon from '../Assets/search.png';
-import clear_icon from '..Assets/clear.png';
-import cloud_icon from '../Assets/cloud.png';
-import drizzle_icon from '..Assets/drizzle.png';
-import rain_icon from '../Assets/rain.png';
-import snow_icon from '..Assets/snow.png';
-import wind_icon from '../Assets/wind.png';
-import humidity_icon from '..Assets/humidity.png';
+import search_icon from '../components/Assets/search.png';
+import clear_icon from '../components/Assets/clear.png';
+import cloud_icon from '../components/Assets/cloud.png';
+import drizzle_icon from '../components/Assets/drizzle.png';
+import rain_icon from '../components/Assets/rain.png';
+import snow_icon from '../components/Assets/snow.png';
+import wind_icon from '../components/Assets/wind.png';
+import humidity_icon from '../components/Assets/humidity.png';
 
 const WeatherApp = () => {
     let api_key = "ad0c6bf9e700e996a399a469b44520a6";
@@ -30,7 +30,7 @@ const WeatherApp = () => {
     const temperature = document.getElementsByClassName('weather-temp');
     const location = document.getElementsByClassName('weather-location');
 
-    humidity[0].innerHTML = data.main.humidity + "%";
+    humidity[0].innerHTML = data.main.humidity + "%"; //use states and remove innerHTML
     wind[0].innerHTML = Math.floor(data.wind.speed) + "km/h";
     temperature[0].innerHTML = Math.floor(data.main.temp) + "°C";
     location[0].innerHTML = data.name;
