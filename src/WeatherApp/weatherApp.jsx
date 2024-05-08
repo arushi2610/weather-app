@@ -30,11 +30,27 @@ const WeatherApp = () => {
     const temperature = document.getElementsByClassName('weather-temp');
     const location = document.getElementsByClassName('weather-location');
 
+    function humidity(){
+        return data.main.humidity + "%";
+    }
+
+    function wind(){
+        return Math.floor(data.wind.speed) + "km/h";
+    }
+
+    function temperature(){
+        return Math.floor(data.main.temp) + "°C";
+    }
+
+    function location(){
+        return data.name;
+    }
+/*
     humidity[0].innerHTML = data.main.humidity + "%"; //use states and remove innerHTML
     wind[0].innerHTML = Math.floor(data.wind.speed) + "km/h";
     temperature[0].innerHTML = Math.floor(data.main.temp) + "°C";
     location[0].innerHTML = data.name;
-
+*/
         if (data.weather[0].icon === "01d" || data.weather[0].icon === "01n"){
             setWicon(clear_icon);
         }
